@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection and Blog</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="homePage">
+        <div class="form-container">
+            <form id="fraudForm" action="/" method="post">
+                <label for="fraudType" class="section-heading">Select Fraud Type</label>
+                <select id="fraudType" name="fraudType">
+                    <option value="healthcare">Select from given options</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="credit card">Credit Card</option>
+                    <option value="vehicle insurance">Vehicle Insurance</option>
+                </select>
+                <div id="inputFields"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="resultPage" style="display: none;">
+        <div class="result-box">
+            <div id="result">Prediction: Not Fraud</div>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <div id="storySection">
+        <div class="form-container">
+            <h2 class="section-heading">Tell Your Story</h2>
+            <form id="storyForm" action="/submit_story" method="post">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Content</label>
+                <textarea id="content" name="content" required></textarea>
+                <button type="submit">Submit Story</button>
+            </form>
+            <div id="stories"></div>
+        </div>
+    </div>
+
+    <script src="../static/scripts.js"></script>
+</body>
+</html>
